@@ -22,7 +22,16 @@ int main() {
   cout << "Make your selection now: ";
   cin >> selection;
 
-  while(selection != 8){
+  while(selection != "8"){
+    if (selection == "1"){
+      cout << "Enter the filename of the collection: ";
+      cin >> filename;
+
+      MyFilms.read_from_file(filename);
+    }
+    if (selection == "3"){
+      MyFilms.print();
+    }
     
     cout << "Enter another command: ";
     cin >> selection;

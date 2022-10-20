@@ -8,6 +8,9 @@
 #include <string>
 
 struct Movie{
+  int data;
+  Movie* next;
+
   std::string title;
   std::string director;
   int runtime;
@@ -29,7 +32,7 @@ class MovieList{
   std::string find_movie(std::string movieSearch);
   std::string director_search(std::string directorSearch);
   void print();
-  void remove();
+  void remove(std::string movieName);
 };
 
 #endif //LIBRARY_H

@@ -40,3 +40,9 @@ Ed Wood
 Betamax
 0.03
 1957
+Bill & Ted's Excellent Adventure
+Stephen Herek
+90
+Laserdisc
+14.99
+1989

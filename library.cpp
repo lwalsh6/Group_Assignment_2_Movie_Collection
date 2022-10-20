@@ -13,7 +13,7 @@ MovieList::MovieList(){
 
 MovieList::~MovieList(){
   while(head != NULL){
-    //remove(head->title);
+    remove(head->title);
   }
 }
 
@@ -32,7 +32,6 @@ void MovieList::read_from_file(std::string filename){
 
   fin.get();
   getline(fin, mtitle);
-  fin.get();
   getline(fin, dName);
   fin >> length;
   fin >> fType;
@@ -44,7 +43,6 @@ void MovieList::read_from_file(std::string filename){
 
     fin.get();
     getline(fin, mtitle);
-    fin.get();
     getline(fin, dName);
     fin >> length;
     fin >> fType;
@@ -113,5 +111,34 @@ void MovieList::print(){
   delete current;
 }
 
-void MovieList::remove(){
+void MovieList::remove(string movieName){
+  Movie *tmp = new Movie();
+  Movie *eraser = new Movie();
+  tmp->next = NULL;
+  eraser->next = NULL;
+
+  if(head == NULL){
+    cout << "Uh oh, you don't have any movies" << endl;
+    return;
+  }
+
+  if(head->title == movieName){
+    eraser = head;
+    head = head->next;
+    //Eraser has been clearned out
+    delete eraser;
+    return;
+  }
+  tmp = head;
+  
+  while(tmp->next != NULL && (tmp->next->title != movieName)){
+    tmp = tmp->next;
+  }
+  if(tmp->next == NULL){
+    return;
+  }
+  eraser = tmp->next;
+  tmp->next = eraser->next;
+  
+  delete eraser;
 }

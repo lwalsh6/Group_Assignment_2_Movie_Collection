@@ -25,7 +25,7 @@ library.o:		library.cpp library.h
 # Compile stacker.o with all errors and warnings
 		$(CC) $(CFLAGS) -c library.cpp
 
-main.o:		main.cpp phonebook.h
+main.o:		main.cpp library.h
 # Compile main.o with all errors and warnings
 		$(CC) $(CFLAGS) -c main.cpp
 
