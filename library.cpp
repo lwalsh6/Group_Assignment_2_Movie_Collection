@@ -30,7 +30,6 @@ void MovieList::read_from_file(std::string filename){
   float priceTag;
   int mYear;
 
-  fin.get();
   getline(fin, mtitle);
   getline(fin, dName);
   fin >> length;
@@ -52,6 +51,25 @@ void MovieList::read_from_file(std::string filename){
 }
 
 void MovieList::write_to_file(std::string filename){
+  Movie* add = head;
+  fstream fin;
+  ofstream fout;
+  fout.open(filename);
+  fin.clear();
+
+  cout << "Writing to new collection...chill out for a sec" << endl;
+  while(add != NULL){
+    fout << add->title << endl;
+    fout << add->director << endl;
+    fout << add->runtime << endl;
+    fout << add->format << endl;
+    fout << add->price << endl;
+    fout << add->year << endl;
+
+    add = add->next;
+  }
+  cout << "Done! Now you can celebrate!" << endl;
+  fout.close();
 }
 
 void MovieList::insert_sorted(string mtitle, string dName, int rTime, string filmForm, float priceTag, int fyear){
@@ -107,8 +125,9 @@ void MovieList::print(){
     cout << "\tCost: $" << current->price << endl;
     cout << "\tYear Released: " << current-> year << endl;
     cout << endl;
+
+    current = current->next;
   }
-  delete current;
 }
 
 void MovieList::remove(string movieName){

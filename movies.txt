@@ -1,48 +1,54 @@
-The Spongebob Squarepants Movie
-Stephen Hillenburg
-87
-Blu-Ray
-4.99
-2004
-Raiders of the Lost Ark
-Steven Spielberg
-115
-Blu-Ray
-5.99
-1981
-Cats Don't Dance
-Mark Dindal
-75
-DVD
-8.99
-1998
-Shrek
-Andrew Adamson
-90
-Laserdisc
-599.99
-2001
-The Room
-Tommy Wiseau
-99
-Blu-Ray
-19.99
-2003
-Team America World Police
-Trey Parker
-98
-DVD
-2.99
-2004
-Plan 9 from Outer Space
-Ed Wood
-79
-Betamax
-0.03
-1957
 Bill & Ted's Excellent Adventure
 Stephen Herek
 90
 Laserdisc
 14.99
 1989
+Cats Don't Dance
+Mark Dindal
+75
+DVD
+8.99
+1998
+Plan 9 from Outer Space
+Ed Wood
+79
+Betamax
+0.03
+1957
+Raiders of the Lost Ark
+Steven Spielberg
+115
+Blu-Ray
+5.99
+1981
+Shrek
+Andrew Adamson
+90
+Laserdisc
+599.99
+2001
+Spaceballs
+Mel Brooks
+96
+DVD
+2.99
+1987
+Team America World Police
+Trey Parker
+98
+DVD
+2.99
+2004
+The Room
+Tommy Wiseau
+99
+Blu-Ray
+19.99
+2003
+The Spongebob Squarepants Movie
+Stephen Hillenburg
+87
+Blu-Ray
+4.99
+2004
