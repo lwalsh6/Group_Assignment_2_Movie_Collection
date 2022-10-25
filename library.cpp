@@ -23,7 +23,7 @@ void MovieList::read_from_file(std::string filename){
   fin.open(filename);
   fin.clear();
 
-  string mtitle;
+  /*  string mtitle;
   string dName;
   int length;
   string fType;
@@ -35,18 +35,33 @@ void MovieList::read_from_file(std::string filename){
   fin >> length;
   fin >> fType;
   fin >> priceTag;
-  fin >> mYear;
+  fin >> mYear; */
+
+  Movie temp;
+  
+  getline(fin, temp.title);
+  getline(fin, temp.director);
+  fin >> temp.runtime;
+  fin >> temp.format;
+  fin >> temp.price;
+  fin >> temp.year;
 
   while(fin){
-    insert_sorted(mtitle, dName, length, fType, priceTag, mYear);
+    insert_sorted(temp.title, temp.director, temp.runtime, temp.format, temp.price, temp.Year);
 
     fin.get();
-    getline(fin, mtitle);
+    getline(fin, temp.title);
+    getline(fin, temp.director);
+    fin >> temp.runtime;
+    fin >> temp.format;
+    fin >> temp.price;
+    fin >> temp.year;
+    /* getline(fin, mtitle);
     getline(fin, dName);
     fin >> length;
     fin >> fType;
     fin >> priceTag;
-    fin >> mYear;
+    fin >> mYear; */
   }
 }
 
@@ -73,25 +88,28 @@ void MovieList::write_to_file(std::string filename){
 }
 
 void MovieList::insert_sorted(string mtitle, string dName, int rTime, string filmForm, float priceTag, int fyear){
-  Movie *insnode = new Movie;
-  Movie *tmpnode = head;
-  insnode->next = NULL;
+  Movie ins;
+  Movie tmp;
+  
+  ins.title = mtitle;
+  ins.director = dName;
+  ins.runtime = rTime;
+  ins.format = filmForm;
+  ins.price = priceTag;
+  ins.year = fyear;
 
-  insnode->title = mtitle;
-  insnode->director = dName;
-  insnode->runtime = rTime;
-  insnode->format = filmForm;
-  insnode->price = priceTag;
-  insnode->year = fyear;
-
+  list<movie>::iterator head;
+  //?
   if(head == NULL){
-    head = insnode;
+    head = ins;
     return;
   }
-  if(insnode->title < head->title){
-    tmpnode = head;
-    head = insnode;
-    head->next = tmpnode;
+  if(ins.title < head.title){
+    //?
+    //tmpnode = head;
+    //head = insnode;
+    //head->next = tmpnode;
+    Movie.push_back(ins);
   }
   else{
     tmpnode = head;
@@ -105,7 +123,7 @@ void MovieList::insert_sorted(string mtitle, string dName, int rTime, string fil
     }
     insnode->next = tmpnode->next;
     tmpnode->next = insnode;
-  }
+    }
 }
 
 std::string MovieList::find_movie(std::string movieSearch){

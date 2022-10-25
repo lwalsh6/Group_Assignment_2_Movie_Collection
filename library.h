@@ -8,9 +8,6 @@
 #include <string>
 
 struct Movie{
-  int data;
-  Movie* next;
-
   std::string title;
   std::string director;
   int runtime;
@@ -21,7 +18,7 @@ struct Movie{
 
 class MovieList{
  private:
-  Movie* head;
+  list<Movie> movies;
   
  public:
   MovieList();
