@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-  MovieList MyFilms;
+  library MyFilms;
 
   string filename;
   string selection;

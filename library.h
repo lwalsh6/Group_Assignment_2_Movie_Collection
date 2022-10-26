@@ -16,13 +16,13 @@ struct Movie{
   int year;
 };
 
-class MovieList{
+class library{
  private:
-  list<Movie> movies;
+  std::list<Movie> movies;
   
  public:
-  MovieList();
-  ~MovieList();
+  library();
+  ~library();
   void read_from_file(std::string filename);
   void write_to_file(std::string filename);
   void insert_sorted(std::string mtitle, std::string dName, int rTime, std::string filmForm, float priceTag, int fyear);
