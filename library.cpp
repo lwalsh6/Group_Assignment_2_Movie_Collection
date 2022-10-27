@@ -4,6 +4,7 @@
 #include <list>
 #include <string>
 #include "library.h"
+//#include "Movie.h"
 
 using namespace std;
 
@@ -23,20 +24,6 @@ void library::read_from_file(std::string filename){
   fin.open(filename);
   if (!fin)
     return;
-
-  /*  string mtitle;
-  string dName;
-  int length;
-  string fType;
-  float priceTag;
-  int mYear;
-
-  getline(fin, mtitle);
-  getline(fin, dName);
-  fin >> length;
-  fin >> fType;
-  fin >> priceTag;
-  fin >> mYear; */
 
   Movie temp;
   // priming read
@@ -108,18 +95,41 @@ void library::insert_sorted(string mtitle, string dName, int rTime, string filmF
   movies.insert(i, ins);
 }
 
-std::string library::find_movie(std::string movieSearch){
-  //temp
-  return "";
+void library::find_movie(std::string movieSearch){
+  //while(existingFilm != movies.end()){
+
+  cout << endl;
+  for(list<Movie>::iterator search = movies.begin(); search != movies.end(); search++){
+    //Searches for similarities until the end of the string
+    if(search->title.find(movieSearch) != string::npos){
+      cout << "\t" << search->title << endl;
+      cout << "\tDirector: " << search->director << endl;
+      cout << "\tRun Time: " << search->runtime << " minutes" << endl;
+      cout << "\tFormat: " << search->format << endl;
+      cout << "\tCost: $" << search->price << endl;
+      cout << "\tYear Released: " << search-> year << endl;
+      cout << endl;
+    }
+  }
 }
 
-std::string director_search(std::string directorSearch){
-  //temp
-  return "";
+void library::director_search(std::string directorSearch){
+  cout << endl;
+  for(list<Movie>::iterator altsearch = movies.begin(); altsearch != movies.end(); altsearch++){
+    if(altsearch->director.find(directorSearch) != string::npos){
+      cout << "\t" << altsearch->title << endl;
+      cout << "\tDirector: " << altsearch->director << endl;
+      cout << "\tRun Time: " << altsearch->runtime << " minutes" << endl;
+      cout << "\tFormat: " << altsearch->format << endl;
+      cout << "\tCost: $" << altsearch->price << endl;
+      cout << "\tYear Released: " << altsearch-> year << endl;
+      cout << endl;
+    }
+  } 
 }
 
 void library::print(){
- 
+  cout << endl;
   for(list<Movie>::iterator current = movies.begin(); current != movies.end(); current++){
     cout << "\t" << current->title << endl;
     cout << "\tDirector: " << current->director << endl;
@@ -132,33 +142,18 @@ void library::print(){
 }
 
 void library::remove(string movieName){
-  // Movie *tmp = new Movie();
-  // Movie *eraser = new Movie();
-  // tmp->next = NULL;
-  // eraser->next = NULL;
+  list<Movie>::iterator rem = movies.begin();
 
-  // if(head == NULL){
-  //   cout << "Uh oh, you don't have any movies" << endl;
-  //   return;
-  // }
-
-  // if(head->title == movieName){
-  //   eraser = head;
-  //   head = head->next;
-  //   //Eraser has been clearned out
-  //   delete eraser;
-  //   return;
-  // }
-  // tmp = head;
-  
-  // while(tmp->next != NULL && (tmp->next->title != movieName)){
-  //   tmp = tmp->next;
-  // }
-  // if(tmp->next == NULL){
-  //   return;
-  // }
-  // eraser = tmp->next;
-  // tmp->next = eraser->next;
-  
-  // delete eraser;
+  //Checks if there's nothing in the list
+  if(movies.empty()){
+    cout << "Uh oh, there's no movies in this collection!" << endl;
+    return;
+  }
+  //Goes through the list checking every title
+  while(rem != movies.end() && rem->title != movieName){
+    //Next line in rem
+    rem++;
+  }
+  //Removes movie from list
+  movies.erase(rem);
 }

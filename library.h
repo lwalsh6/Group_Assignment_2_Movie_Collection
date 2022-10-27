@@ -26,8 +26,8 @@ class library{
   void read_from_file(std::string filename);
   void write_to_file(std::string filename);
   void insert_sorted(std::string mtitle, std::string dName, int rTime, std::string filmForm, float priceTag, int fyear);
-  std::string find_movie(std::string movieSearch);
-  std::string director_search(std::string directorSearch);
+  void find_movie(std::string movieSearch);
+  void director_search(std::string directorSearch);
   void print();
   void remove(std::string movieName);
 };

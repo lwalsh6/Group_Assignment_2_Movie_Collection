@@ -38,7 +38,7 @@ int main() {
       MyFilms.read_from_file(filename);
     }
 
-    if (selection == "2"){
+    else if (selection == "2"){
       string newFile;
       cout << "Enter a file to write to: ";
       cin >> newFile;
@@ -46,10 +46,27 @@ int main() {
       MyFilms.write_to_file(newFile);
     }
     
-    if (selection == "3"){
+    else if (selection == "3"){
       MyFilms.print();
     }
-    if (selection == "6"){
+
+    else if (selection == "4"){
+      cout << "Enter the Title (Case Sensitive): ";
+      cin.get();
+      getline(cin, mTitle);
+
+      MyFilms.find_movie(mTitle);
+    }
+
+    else if (selection == "5"){
+      cout << "Enter the Name of the Director (Case Sensitive): ";
+      cin.get();
+      getline(cin, directName);
+
+      MyFilms.director_search(directName);
+    }
+    
+    else if (selection == "6"){
       cout << "Enter the Title: ";
       cin.get();
       getline(cin, mTitle);
@@ -65,6 +82,16 @@ int main() {
       cin >> releaseYear;
 
       MyFilms.insert_sorted(mTitle, directName, fLength, form, cost, releaseYear);
+    }
+    else if (selection == "7"){
+      cout << "Enter the Title: ";
+      cin.get();
+      getline(cin, mTitle);
+      
+      MyFilms.remove(mTitle);
+    }
+    else{
+      cout << "That is not an option..." << endl;
     }
     
     cout << "Enter another command: ";
