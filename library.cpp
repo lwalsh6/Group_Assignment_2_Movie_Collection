@@ -1,22 +1,21 @@
+/**
+ * @file library.cpp
+ * @author Logan Walsh/Zachary Rose
+ * @date 2022-10-27
+ * @brief Movie Collection Functions
+ * 
+ * This contains all the written functions for the Movie Collection Program
+ */
+
 #include <iostream>
 #include <iomanip>
 #include <fstream>
 #include <list>
 #include <string>
 #include "library.h"
-//#include "Movie.h"
+#include "Movie.h"
 
 using namespace std;
-
-library::library(){
-  //  head = NULL;
-}
-
-library::~library(){
-  // while(head != NULL){
-  //   remove(head->title);
-  // }
-}
 
 void library::read_from_file(std::string filename){
   ifstream fin;
@@ -96,9 +95,9 @@ void library::insert_sorted(string mtitle, string dName, int rTime, string filmF
 }
 
 void library::find_movie(std::string movieSearch){
-  //while(existingFilm != movies.end()){
-
+  cout << fixed << setprecision(2);
   cout << endl;
+  
   for(list<Movie>::iterator search = movies.begin(); search != movies.end(); search++){
     //Searches for similarities until the end of the string
     if(search->title.find(movieSearch) != string::npos){
@@ -114,7 +113,9 @@ void library::find_movie(std::string movieSearch){
 }
 
 void library::director_search(std::string directorSearch){
+  cout << fixed << setprecision(2);
   cout << endl;
+  
   for(list<Movie>::iterator altsearch = movies.begin(); altsearch != movies.end(); altsearch++){
     if(altsearch->director.find(directorSearch) != string::npos){
       cout << "\t" << altsearch->title << endl;
@@ -129,7 +130,9 @@ void library::director_search(std::string directorSearch){
 }
 
 void library::print(){
+  cout << fixed << setprecision(2);
   cout << endl;
+  
   for(list<Movie>::iterator current = movies.begin(); current != movies.end(); current++){
     cout << "\t" << current->title << endl;
     cout << "\tDirector: " << current->director << endl;

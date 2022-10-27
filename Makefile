@@ -1,5 +1,5 @@
 # Logan Walsh/Zachary Rose
-# 10-20-2022
+# 10-27-2022
 # Makefile
 # Makefile Test Program for compiling the Linked List Phonebook
 # Typing "make" compiles the program
@@ -21,7 +21,7 @@ library:		library.o main.o
 			$(CC) $(CFlags) -o library library.o main.o
 
 # A list of object files needed to create the executable file.
-library.o:		library.cpp library.h
+library.o:		library.cpp library.h Movie.h
 # Compile stacker.o with all errors and warnings
 		$(CC) $(CFLAGS) -c library.cpp
 

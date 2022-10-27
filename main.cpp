@@ -1,3 +1,12 @@
+/**
+ * @file main.cpp
+ * @author Logan Walsh/Zachary Rose
+ * @date 2022-10-27
+ * @brief Movie Collection Program
+ * 
+ * This program allows the user to import and alter a list of movies from a file
+ */
+
 #include <iostream>
 #include "library.h"
 
