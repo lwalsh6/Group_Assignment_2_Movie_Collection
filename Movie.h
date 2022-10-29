@@ -4,19 +4,22 @@
  * @date 2022-10-27
  * @brief Movie Node Struct
  * 
- * This only contains the struct for the movie node
+ * Contains all the information needed for a particular movie node
  */
 
 #ifndef MOVIE_H
 #define MOVIE_H
 
-#include <iostream>
-#include <iomanip>
-#include <fstream>
-#include <list>
 #include <string>
-//#include "library.h"
 
+
+/**
+ * A movie with a title, director, runtime, format such as DVD, price, and a year released
+ *
+ * @class Movie{ Movie.h "Group_Assignment_2_Movie_Collection/Movie.h"
+ * @brief Movie struct
+ *
+ */
 struct Movie{
   std::string title;
   std::string director;

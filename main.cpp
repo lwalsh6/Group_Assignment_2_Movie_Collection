@@ -12,10 +12,20 @@
 
 using namespace std;
 
+
+/**
+ * prints out the command options to console
+ *
+ * @post command options printed to console
+ * 
+ */
+void printInstructions();
+
 int main() {
   library MyFilms;
 
   string filename;
+  // user input
   string selection;
 
   string mTitle;
@@ -26,16 +36,9 @@ int main() {
   int releaseYear;
   
   cout << "Oh No! This movie collection is really disorganized, pick an option to help fix it" << endl;
-  cout << "1 Open a collection of Movies" << endl;
-  cout << "2 Write the movie collection to a file" << endl;
-  cout << "3 Print the collection of Movies" << endl;
-  cout << "4 Search for a Movie" << endl;
-  cout << "5 Search for a Director" << endl;
-  cout << "6 Add a Movie to the collection" << endl;
-  cout << "7 Sell a movie" << endl;
-  cout << "8 Leave this program" << endl;
-
-  cout << "Make your selection now: ";
+  printInstructions();
+  
+  cout << "\nMake your selection now: ";
   cin >> selection;
 
   while(selection != "8"){
@@ -99,12 +102,27 @@ int main() {
       
       MyFilms.remove(mTitle);
     }
+    else if (selection == "h"){
+      printInstructions();
+    }
     else{
       cout << "That is not an option..." << endl;
     }
     
-    cout << "Enter another command: ";
+    cout << "\nEnter another command: ";
     cin >> selection;
   }
   return 0;
+}
+
+void printInstructions(){
+  cout << "1 Open a collection of Movies" << endl;
+  cout << "2 Write the movie collection to a file" << endl;
+  cout << "3 Print the collection of Movies" << endl;
+  cout << "4 Search for a Movie" << endl;
+  cout << "5 Search for a Director" << endl;
+  cout << "6 Add a Movie to the collection" << endl;
+  cout << "7 Sell a movie" << endl;
+  cout << "8 Leave this program" << endl;
+  cout << "h See these commands again" << endl;
 }

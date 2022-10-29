@@ -4,7 +4,7 @@
  * @date 2022-10-27
  * @brief Movie Collection Functions
  * 
- * This contains all the written functions for the Movie Collection Program
+ * Movie collection implementation file
  */
 
 #include <iostream>
@@ -107,7 +107,6 @@ void library::find_movie(std::string movieSearch){
       cout << "\tFormat: " << search->format << endl;
       cout << "\tCost: $" << search->price << endl;
       cout << "\tYear Released: " << search-> year << endl;
-      cout << endl;
     }
   }
 }
@@ -124,7 +123,6 @@ void library::director_search(std::string directorSearch){
       cout << "\tFormat: " << altsearch->format << endl;
       cout << "\tCost: $" << altsearch->price << endl;
       cout << "\tYear Released: " << altsearch-> year << endl;
-      cout << endl;
     }
   } 
 }
@@ -139,8 +137,7 @@ void library::print(){
     cout << "\tRun Time: " << current->runtime << " minutes" << endl;
     cout << "\tFormat: " << current->format << endl;
     cout << "\tCost: $" << current->price << endl;
-    cout << "\tYear Released: " << current-> year << endl;
-    cout << endl;
+    cout << "\tYear Released: " << current-> year << endl << endl;
   }
 }
 
@@ -157,6 +154,7 @@ void library::remove(string movieName){
     //Next line in rem
     rem++;
   }
-  //Removes movie from list
-  movies.erase(rem);
+  //Removes movie from list if it exists
+  if (rem != movies.end())
+    movies.erase(rem);
 }

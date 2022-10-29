@@ -10,13 +10,18 @@
 #ifndef LIBRARY_H
 #define LIBRARY_H
 
-#include <iostream>
-#include <iomanip>
-#include <fstream>
 #include <list>
 #include <string>
 #include "Movie.h"
 
+
+/**
+ * Movie collection class that holds a list of movies, and the ability to read/write to file, search the collection, and sorts alphabetically when added to the collection by the movie title
+ *
+ * @class library{ library.h "Group_Assignment_2_Movie_Collection/library.h"
+ * @brief movie collection class
+ *
+ */
 class library{
  private:
   //Movie list
@@ -40,7 +45,6 @@ class library{
  *
  * @param std::string filename The name of the new file
  * @pre Called in main, movies need to be in the list for it to work
- * @return void returns nothing
  * @post a new file has been written
  * 
  */
@@ -56,8 +60,7 @@ class library{
  * @param float priceTag the cost of the movie
  * @param int fyear the year it was released
  * @pre called in Read_from_file and in main
- * @return void returns nothing
- * @post Movies have been added to the list
+ * @post Movie has been added to the list in alphabetical order by title
  * 
  */
   void insert_sorted(std::string mtitle, std::string dName, int rTime, std::string filmForm, float priceTag, int fyear);
@@ -66,14 +69,35 @@ class library{
  * locates a movie in the list based on the title
  *
  * @param std::string movieSearch The user's input
- * @pre Called in main, user sends a string
- * @return void returns nothing
  * @post the movies that line up with that title are printed
  * 
  */
   void find_movie(std::string movieSearch);
+
+/**
+ * locates and prints movie information based on the director's name
+ *
+ * @param std::string directorSearch name of the director to search
+ * @post the movies made by the director are printed
+ * 
+ */
   void director_search(std::string directorSearch);
+
+/**
+ * prints out the entire movie collection to the console
+ *
+ * @post movie collection printed to console
+ * 
+ */
   void print();
+
+/**
+ * removes a particular movie from the collection by title
+ *
+ * @param std::string movieName title of the movie to remove
+ * @post movie is removed from the collection if it was found
+ * 
+ */
   void remove(std::string movieName);
 };
 
