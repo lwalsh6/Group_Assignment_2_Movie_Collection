@@ -19,8 +19,7 @@ Type "make" to compile the program.
 
 ## Program usage.
 
-To launch the program, type "./library" You will be prompted to input an image folder, input the name of one of the folders in "ppms." You will then be prompted with a menu
-that will allow you to perform 8 different functions. Input a number 1-8 and follow instructions
+To launch the program, type "./library" You will then be prompted with a menu that will allow you to perform 8 different functions. Input a number 1-8 and follow instructions
 
 ## Design Decisions
 
