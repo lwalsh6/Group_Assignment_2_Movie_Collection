@@ -30,3 +30,8 @@ To launch the program, type "./library" You will then be prompted with a menu th
 
 * Learning to switch from a user-made linked list to the one that's pre-programmed in C++ was a bit confusing. 
 * Using iterator logic not only to move through the data structure but as parameters to methods.
+
+## Work Distribution
+
+* Design decisions and iterator logic were discussed over Discord
+* We each did approximately half of the functions and the documentation while discussing implementation 
