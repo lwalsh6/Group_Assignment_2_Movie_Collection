@@ -106,7 +106,7 @@ void library::find_movie(std::string movieSearch){
       cout << "\tRun Time: " << search->runtime << " minutes" << endl;
       cout << "\tFormat: " << search->format << endl;
       cout << "\tCost: $" << search->price << endl;
-      cout << "\tYear Released: " << search-> year << endl;
+      cout << "\tYear Released: " << search-> year << endl << endl;
     }
   }
 }
@@ -122,7 +122,7 @@ void library::director_search(std::string directorSearch){
       cout << "\tRun Time: " << altsearch->runtime << " minutes" << endl;
       cout << "\tFormat: " << altsearch->format << endl;
       cout << "\tCost: $" << altsearch->price << endl;
-      cout << "\tYear Released: " << altsearch-> year << endl;
+      cout << "\tYear Released: " << altsearch-> year << endl << endl;
     }
   } 
 }
